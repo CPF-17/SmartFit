@@ -8,30 +8,53 @@
 
 import UIKit
 import GoogleSignIn
+import FirebaseAuth
 
-class LoginViewController: UIViewController, GIDSignInUIDelegate {
+@MainActor
+final class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().signIn()
+        restorePreviousSession()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func restorePreviousSession() {
+        GIDSignIn.sharedInstance.restorePreviousSignIn { [weak self] user, _ in
+            guard let self, let user else { return }
+            Task { @MainActor in await self.authenticate(user) }
+        }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction private func signInTapped(_ sender: Any) {
+        Task { await signInWithGoogle() }
     }
-    */
 
+    private func signInWithGoogle() async {
+        do {
+            let result = try await GIDSignIn.sharedInstance.signIn(withPresenting: self)
+            await authenticate(result.user)
+        } catch {
+            print("Sign-in error: \(error.localizedDescription)")
+        }
+    }
+
+    private func authenticate(_ user: GIDGoogleUser) async {
+        guard let idToken = user.idToken?.tokenString else { return }
+        let credential = GoogleAuthProvider.credential(
+            withIDToken: idToken,
+            accessToken: user.accessToken.tokenString
+        )
+        do {
+            try await Auth.auth().signIn(with: credential)
+            navigateToMain()
+        } catch {
+            print("Firebase auth error: \(error.localizedDescription)")
+        }
+    }
+
+    private func navigateToMain() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "LoggedView")
+        view.window?.rootViewController = vc
+    }
 }

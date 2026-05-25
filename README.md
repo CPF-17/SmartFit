@@ -1,68 +1,88 @@
+<div align="center">
+
 # SmartFit
 
-SmartFit is a fitness app that help to manage and improve user’s workout habit.
+**iOS fitness app — personalized workouts, HealthKit stats, Firebase auth**
 
-## User Stories
+[![Swift](https://img.shields.io/badge/Swift-6.3-F05138?logo=swift&logoColor=white)](https://swift.org/blog/swift-6/)
+[![iOS](https://img.shields.io/badge/iOS-17%2B-000000?logo=apple&logoColor=white)](https://developer.apple.com/ios/)
+[![Firebase](https://img.shields.io/badge/Firebase-11-FFCA28?logo=firebase&logoColor=black)](https://firebase.google.com)
+[![HealthKit](https://img.shields.io/badge/HealthKit-enabled-FF2D55?logo=apple&logoColor=white)](https://developer.apple.com/healthkit/)
 
-The following **required** functionality is completed:
+</div>
 
-- [X] Sign in authorization (FIREBASE, Google Auth) (April 19)
-- [ ] Customizable goals (represented as mascot) based on a user preference (April 19)
-- [ ] Customized workout based on their fitness goals← simplex algorithm (Start some before April 19)
-- [ ] Select certain machines to use (Life Fitness API) Life Fitness API
-- [ ] Measure user’s workouts stats (HealthKit)
-- [ ] View graphical history/stats timeline about their progress (APPLE FITNESS FRAMEWORK)
+---
 
-The following **optional** features are implemented:
+## Overview
 
-- [ ] Notification for workout reminder
-- [ ] A personal “mascot” (avatar?)
-- [ ] Achievement for different goals
-- [ ] Locate nearest gym with certain machines
-- [ ] Order for personal trainer
-- [ ] Instruction of using machines (use api to show a video tutorial) 
-- [ ] Diet tracker and nutrition help
+SmartFit tracks and improves workout habits through personalized goal-setting, equipment-aware exercise planning, and HealthKit-powered session stats. Users sign in via Google, define muscle-group targets, select gym machines, and view progress over time.
 
-Reference:
+<!-- Add a demo recording: record in iOS Simulator, convert to GIF (e.g. Gifski), save to assets/demo.gif -->
 
-- [Google Document](https://docs.google.com/a/ucsd.edu/document/d/1FPpNk4JD2M2FE_W07QuZLgkWmFn_23DNXM5kTEOnJ0k/edit?usp=sharing)
+## Features
 
-User:
-  email (google?)
-  name
-  password
-  uid
-  PreferenceObject
-  StatsObject
-  user_masot (optional)
+| Feature | Status | Technology |
+|---|---|---|
+| Google Sign-In | ✅ Live | Firebase Auth + GoogleSignIn 7 |
+| Personalized goal setting | 🔨 In progress | Custom `PreferenceModel` (chest, arms, legs, back, abs) |
+| Machine selection | 🔨 In progress | Life Fitness API |
+| HealthKit stats (HR, calories, steps) | 🔨 In progress | HealthKit framework |
+| Progress charts | 🔨 In progress | Apple Fitness framework |
+| Workout reminders | 📋 Planned | `UserNotifications` |
 
--- Encapsulated as a PreferenceObject --
-Fitness Preference:
-  -- represented by integers for size --
-  chest
-  legs (quads, hamstrings, hips)
-  arms (biceps, triceps, shoulders)
-  back (lats, rhomboids)
-  abs
+## Tech Stack
 
-  goal_weight (optional)
-  goal_time (optional)
+- **Swift 6.3** — strict concurrency, `async`/`await` throughout auth flow, `@MainActor` UI isolation
+- **Firebase 11** — `FirebaseCore` + `FirebaseAuth` for credential management
+- **GoogleSignIn 7** — modern `signIn(withPresenting:)` async API, no delegate pattern
+- **HealthKit** — per-session and aggregate stat collection
+- **CocoaPods** (migrating to Swift Package Manager)
 
--- Encapsulated as a StatsObject --
-Workout Statistics
-  -- these fields sum the stats from each MachineStatsObject --
-  DataTracker total_stats // sum of all stats from MachineStats array
-  MachineStats[] : MachineStatsObject
+## Architecture
 
--- encapsulated as a MachineStatsObject --
-MachineStats:
-  --each machine has a DataTracker --
-  DataTrackerObject
+```
+SmartFit/
+├── AppDelegate.swift           # @main entry, FirebaseApp.configure(), URL routing
+├── LoginViewController.swift   # Google Sign-In (@MainActor, async/await)
+├── ViewController.swift        # Main dashboard entry point
+└── Models (planned)
+    ├── PreferenceModel         # Body-area targets, goal weight/time
+    ├── WorkoutStats            # Session aggregator
+    └── MachineStats            # Per-machine DataTracker
+```
 
--- tracks below fields --
-DataTracker
-  weight
-  heart_rate
-  calories_burned
-  time_duration
-  steps
+## Data Model
+
+```
+User
+├── PreferenceModel
+│   ├── chest / legs / arms / back / abs  (Int)
+│   ├── goal_weight                       (optional)
+│   └── goal_time                         (optional)
+└── WorkoutStats
+    ├── total_stats: DataTracker
+    └── machine_stats: [MachineStatsModel]
+        └── DataTracker
+            ├── weight
+            ├── heart_rate
+            ├── calories_burned
+            ├── time_duration
+            └── steps
+```
+
+## Getting Started
+
+```bash
+git clone https://github.com/CPF-17/SmartFit.git
+cd SmartFit
+pod install
+open SmartFit.xcworkspace
+```
+
+Add `GoogleService-Info.plist` from your Firebase console (iOS app → Project Settings) before building.
+
+**Requirements:** Xcode 16+, iOS 17+ deployment target, CocoaPods
+
+## Team
+
+Built by [CPF-17](https://github.com/CPF-17) at UC San Diego
