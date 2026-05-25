@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="560" viewBox="0 0 280 560">
+  <defs>
+    <clipPath id="screen">
+      <rect x="20" y="50" width="240" height="460" rx="4"/>
+    </clipPath>
+    <style>
+      #s-login { animation: show-login 9s ease-in-out infinite; }
+      #s-dash  { animation: show-dash  9s ease-in-out infinite; }
+      #s-stats { animation: show-stats 9s ease-in-out infinite; }
+      @keyframes show-login {
+        0%,28%   { opacity:1 }
+        34%,90%  { opacity:0 }
+        96%,100% { opacity:1 }
+      }
+      @keyframes show-dash {
+        0%,30%   { opacity:0 }
+        36%,62%  { opacity:1 }
+        68%,100% { opacity:0 }
+      }
+      @keyframes show-stats {
+        0%,63%   { opacity:0 }
+        69%,92%  { opacity:1 }
+        98%,100% { opacity:0 }
+      }
+      .logo-ring { animation: pulse 9s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      @keyframes pulse {
+        0%,10%   { transform: scale(1) }
+        18%      { transform: scale(1.12) }
+        26%,100% { transform: scale(1) }
+      }
+      .bar-chest  { animation: w-chest  9s ease-out infinite; }
+      .bar-arms   { animation: w-arms   9s ease-out infinite; }
+      .bar-legs   { animation: w-legs   9s ease-out infinite; }
+      .bar-back   { animation: w-back   9s ease-out infinite; }
+      .bar-abs    { animation: w-abs    9s ease-out infinite; }
+      .bar-cardio { animation: w-cardio 9s ease-out infinite; }
+      @keyframes w-chest  { 0%,34%{width:0} 55%,100%{width:75px} }
+      @keyframes w-arms   { 0%,34%{width:0} 55%,100%{width:60px} }
+      @keyframes w-legs   { 0%,34%{width:0} 55%,100%{width:45px} }
+      @keyframes w-back   { 0%,34%{width:0} 55%,100%{width:80px} }
+      @keyframes w-abs    { 0%,34%{width:0} 55%,100%{width:50px} }
+      @keyframes w-cardio { 0%,34%{width:0} 55%,100%{width:28px} }
+      .sbar-k { animation: w-sk 9s ease-out infinite; }
+      .sbar-t { animation: w-st 9s ease-out infinite; }
+      .sbar-s { animation: w-ss 9s ease-out infinite; }
+      @keyframes w-sk { 0%,68%{width:0} 86%,100%{width:43px} }
+      @keyframes w-st { 0%,68%{width:0} 86%,100%{width:35px} }
+      @keyframes w-ss { 0%,68%{width:0} 86%,100%{width:49px} }
+      .cbar { transform-box: fill-box; transform-origin: bottom; }
+      .cbar-1 { animation: cg1 9s ease-out infinite; }
+      .cbar-2 { animation: cg2 9s ease-out infinite; }
+      .cbar-3 { animation: cg3 9s ease-out infinite; }
+      .cbar-4 { animation: cg4 9s ease-out infinite; }
+      .cbar-5 { animation: cg5 9s ease-out infinite; }
+      .cbar-6 { animation: cg6 9s ease-out infinite; }
+      .cbar-7 { animation: cg7 9s ease-out infinite; }
+      @keyframes cg1 { 0%,68%{transform:scaleY(0)} 86%,100%{transform:scaleY(1)} }
+      @keyframes cg2 { 0%,69%{transform:scaleY(0)} 87%,100%{transform:scaleY(1)} }
+      @keyframes cg3 { 0%,70%{transform:scaleY(0)} 88%,100%{transform:scaleY(1)} }
+      @keyframes cg4 { 0%,71%{transform:scaleY(0)} 89%,100%{transform:scaleY(1)} }
+      @keyframes cg5 { 0%,72%{transform:scaleY(0)} 90%,100%{transform:scaleY(1)} }
+      @keyframes cg6 { 0%,73%{transform:scaleY(0)} 91%,100%{transform:scaleY(1)} }
+      @keyframes cg7 { 0%,74%{transform:scaleY(0)} 92%,100%{transform:scaleY(1)} }
+      .gbtn { animation: gbtn 9s ease infinite; transform-box: fill-box; transform-origin: center; }
+      @keyframes gbtn {
+        0%,18%   { transform:scale(1); opacity:1 }
+        21%      { transform:scale(.95); opacity:.8 }
+        24%,100% { transform:scale(1); opacity:1 }
+      }
+    </style>
+  </defs>
+  <rect x="4" y="4" width="272" height="552" rx="36" fill="#111" stroke="#2a2a2a" stroke-width="1.5"/>
+  <rect x="4" y="4" width="272" height="552" rx="36" fill="none" stroke="#333" stroke-width=".5"/>
+  <rect x="0" y="128" width="4" height="38" rx="2" fill="#1e1e1e"/>
+  <rect x="0" y="176" width="4" height="38" rx="2" fill="#1e1e1e"/>
+  <rect x="276" y="148" width="4" height="58" rx="2" fill="#1e1e1e"/>
+  <rect x="88" y="4" width="104" height="24" rx="12" fill="#111"/>
+  <circle cx="140" cy="16" r="5" fill="#0d0d0d"/>
+  <circle cx="140" cy="16" r="2" fill="#1a1a1a"/>
+  <rect x="20" y="50" width="240" height="460" rx="4" fill="#0a0a0f"/>
+  <g id="s-login" clip-path="url(#screen)">
+    <ellipse cx="140" cy="200" rx="110" ry="90" fill="#0d3018" opacity=".8"/>
+    <g class="logo-ring"><circle cx="140" cy="188" r="32" fill="#1a4824"/></g>
+    <circle cx="140" cy="188" r="24" fill="#34c759"/>
+    <rect x="122" y="185" width="36" height="6" rx="3" fill="white"/>
+    <rect x="118" y="180" width="8" height="14" rx="3" fill="white"/>
+    <rect x="154" y="180" width="8" height="14" rx="3" fill="white"/>
+    <text x="140" y="240" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="23" font-weight="700" fill="white">SmartFit</text>
+    <text x="140" y="260" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#636366">Track · Train · Transform</text>
+    <g class="gbtn">
+      <rect x="50" y="316" width="180" height="46" rx="23" fill="white"/>
+      <text x="140" y="344" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#111">Continue with Google</text>
+    </g>
+    <text x="140" y="392" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#48484a">Sign in with email instead</text>
+  </g>
+  <g id="s-dash" opacity="0" clip-path="url(#screen)">
+    <text x="30" y="72" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="white">9:41</text>
+    <text x="30" y="98" font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#636366">Good morning,</text>
+    <text x="30" y="120" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="white">Gerard</text>
+    <rect x="176" y="103" width="74" height="22" rx="11" fill="#1a1a22"/>
+    <text x="213" y="118" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#34c759">7 day streak</text>
+    <text x="30" y="148" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#48484a" letter-spacing=".8">TODAY'S TARGETS</text>
+    <rect x="26" y="158" width="104" height="66" rx="10" fill="#1a1a22"/>
+    <rect x="26" y="158" width="104" height="3" rx="2" fill="#34c759"/>
+    <text x="38" y="178" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="white">Chest</text>
+    <text x="38" y="195" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#636366">75%</text>
+    <rect x="38" y="212" width="80" height="6" rx="3" fill="#2a2a3a"/>
+    <rect x="38" y="212" height="6" rx="3" fill="#34c759" class="bar-chest"/>
+    <rect x="142" y="158" width="104" height="66" rx="10" fill="#1a1a22"/>
+    <rect x="142" y="158" width="104" height="3" rx="2" fill="#007aff"/>
+    <text x="154" y="178" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="white">Arms</text>
+    <text x="154" y="195" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#636366">60%</text>
+    <rect x="154" y="212" width="80" height="6" rx="3" fill="#2a2a3a"/>
+    <rect x="154" y="212" height="6" rx="3" fill="#007aff" class="bar-arms"/>
+    <rect x="26" y="234" width="104" height="66" rx="10" fill="#1a1a22"/>
+    <rect x="26" y="234" width="104" height="3" rx="2" fill="#ff9500"/>
+    <text x="38" y="254" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="white">Legs</text>
+    <text x="38" y="271" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#636366">45%</text>
+    <rect x="38" y="288" width="80" height="6" rx="3" fill="#2a2a3a"/>
+    <rect x="38" y="288" height="6" rx="3" fill="#ff9500" class="bar-legs"/>
+    <rect x="142" y="234" width="104" height="66" rx="10" fill="#1a1a22"/>
+    <rect x="142" y="234" width="104" height="3" rx="2" fill="#af52de"/>
+    <text x="154" y="254" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="white">Back</text>
+    <text x="154" y="271" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#636366">80%</text>
+    <rect x="154" y="288" width="80" height="6" rx="3" fill="#2a2a3a"/>
+    <rect x="154" y="288" height="6" rx="3" fill="#af52de" class="bar-back"/>
+    <rect x="26" y="310" width="104" height="66" rx="10" fill="#1a1a22"/>
+    <rect x="26" y="310" width="104" height="3" rx="2" fill="#ff3b30"/>
+    <text x="38" y="330" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="white">Abs</text>
+    <text x="38" y="347" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#636366">50%</text>
+    <rect x="38" y="364" width="80" height="6" rx="3" fill="#2a2a3a"/>
+    <rect x="38" y="364" height="6" rx="3" fill="#ff3b30" class="bar-abs"/>
+    <rect x="142" y="310" width="104" height="66" rx="10" fill="#1a1a22"/>
+    <rect x="142" y="310" width="104" height="3" rx="2" fill="#5ac8fa"/>
+    <text x="154" y="330" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="white">Cardio</text>
+    <text x="154" y="347" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#636366">35%</text>
+    <rect x="154" y="364" width="80" height="6" rx="3" fill="#2a2a3a"/>
+    <rect x="154" y="364" height="6" rx="3" fill="#5ac8fa" class="bar-cardio"/>
+    <rect x="20" y="430" width="240" height="80" fill="#1a1a22"/>
+    <line x1="20" y1="430" x2="260" y2="430" stroke="#2a2a3a" stroke-width="1"/>
+    <text x="61" y="452" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="white">2,340</text>
+    <text x="61" y="470" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#48484a">kcal</text>
+    <text x="140" y="452" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="white">47</text>
+    <text x="140" y="470" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#48484a">min</text>
+    <text x="219" y="452" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="white">8,432</text>
+    <text x="219" y="470" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#48484a">steps</text>
+  </g>
+  <g id="s-stats" opacity="0" clip-path="url(#screen)">
+    <text x="30" y="72" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="600" fill="white">9:41</text>
+    <text x="30" y="102" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="white">Progress</text>
+    <text x="30" y="122" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#48484a" letter-spacing=".8">WEEKLY OVERVIEW</text>
+    <rect x="26" y="132" width="228" height="46" rx="10" fill="#1a1a22"/>
+    <rect x="26" y="132" width="4" height="46" rx="2" fill="#34c759"/>
+    <text x="42" y="152" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="white">12,840</text>
+    <text x="42" y="169" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#636366">Total kcal</text>
+    <rect x="182" y="151" width="60" height="6" rx="3" fill="#2a2a3a"/>
+    <rect x="182" y="151" height="6" rx="3" fill="#34c759" class="sbar-k"/>
+    <rect x="26" y="188" width="228" height="46" rx="10" fill="#1a1a22"/>
+    <rect x="26" y="188" width="4" height="46" rx="2" fill="#007aff"/>
+    <text x="42" y="208" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="white">5h 32m</text>
+    <text x="42" y="225" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#636366">Active time</text>
+    <rect x="182" y="207" width="60" height="6" rx="3" fill="#2a2a3a"/>
+    <rect x="182" y="207" height="6" rx="3" fill="#007aff" class="sbar-t"/>
+    <rect x="26" y="244" width="228" height="46" rx="10" fill="#1a1a22"/>
+    <rect x="26" y="244" width="4" height="46" rx="2" fill="#ff9500"/>
+    <text x="42" y="264" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="white">47,210</text>
+    <text x="42" y="281" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#636366">Steps</text>
+    <rect x="182" y="263" width="60" height="6" rx="3" fill="#2a2a3a"/>
+    <rect x="182" y="263" height="6" rx="3" fill="#ff9500" class="sbar-s"/>
+    <text x="30" y="310" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#48484a" letter-spacing=".8">DAILY ACTIVITY</text>
+    <rect x="26" y="318" width="228" height="76" rx="6" fill="#1a1a22"/>
+    <rect class="cbar cbar-1" x="38" y="344" width="20" height="50" rx="3" fill="#2a2a3a"/>
+    <rect class="cbar cbar-2" x="64" y="332" width="20" height="62" rx="3" fill="#2a2a3a"/>
+    <rect class="cbar cbar-3" x="90" y="358" width="20" height="36" rx="3" fill="#2a2a3a"/>
+    <rect class="cbar cbar-4" x="116" y="324" width="20" height="70" rx="3" fill="#34c759"/>
+    <rect class="cbar cbar-5" x="142" y="340" width="20" height="54" rx="3" fill="#2a2a3a"/>
+    <rect class="cbar cbar-6" x="168" y="350" width="20" height="44" rx="3" fill="#2a2a3a"/>
+    <rect class="cbar cbar-7" x="194" y="362" width="20" height="32" rx="3" fill="#2a2a3a"/>
+    <text x="48" y="405" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#636366">M</text>
+    <text x="74" y="405" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#636366">T</text>
+    <text x="100" y="405" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#636366">W</text>
+    <text x="126" y="405" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#34c759">T</text>
+    <text x="152" y="405" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#636366">F</text>
+    <text x="178" y="405" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#636366">S</text>
+    <text x="204" y="405" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#636366">S</text>
+    <rect x="20" y="430" width="240" height="80" fill="#1a1a22"/>
+    <line x1="20" y1="430" x2="260" y2="430" stroke="#2a2a3a" stroke-width="1"/>
+    <circle cx="60" cy="452" r="8" fill="none" stroke="#48484a" stroke-width="1.5"/>
+    <text x="60" y="470" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#48484a">Home</text>
+    <circle cx="140" cy="452" r="8" fill="none" stroke="#48484a" stroke-width="1.5"/>
+    <circle cx="140" cy="452" r="4" fill="#48484a"/>
+    <text x="140" y="470" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#48484a">Train</text>
+    <circle cx="220" cy="452" r="8" fill="none" stroke="#34c759" stroke-width="1.5"/>
+    <circle cx="220" cy="452" r="4" fill="#34c759"/>
+    <text x="220" y="470" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#34c759">Stats</text>
+  </g>
+  <rect x="105" y="540" width="70" height="4" rx="2" fill="#2a2a2a"/>
+</svg>

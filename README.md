@@ -9,6 +9,8 @@
 [![Firebase](https://img.shields.io/badge/Firebase-11-FFCA28?logo=firebase&logoColor=black)](https://firebase.google.com)
 [![HealthKit](https://img.shields.io/badge/HealthKit-enabled-FF2D55?logo=apple&logoColor=white)](https://developer.apple.com/healthkit/)
 
+<img src="assets/demo.svg" width="280" alt="SmartFit app demo — login, dashboard, progress">
+
 </div>
 
 ---
@@ -16,8 +18,6 @@
 ## Overview
 
 SmartFit tracks and improves workout habits through personalized goal-setting, equipment-aware exercise planning, and HealthKit-powered session stats. Users sign in via Google, define muscle-group targets, select gym machines, and view progress over time.
-
-<!-- Add a demo recording: record in iOS Simulator, convert to GIF (e.g. Gifski), save to assets/demo.gif -->
 
 ## Features
 
